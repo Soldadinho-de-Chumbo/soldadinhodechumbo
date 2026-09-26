@@ -15,38 +15,67 @@
     </header>
     
     <main>
-        <div>
-            <picture>
-                <img src="imagens/santiagobernabeu.webp" alt="Estádio Santiago Bernabeu" width="860" height="500">
-            </picture>
-        </div>
+        <section class="galeria-natalina">
+            <h2>Artigos em Destaque</h2>
+            
+            <div class="card-produto">
+                <img src="imagens/calcapapinoel.webp" alt="Calça de Papai Noel decorativa" class="img-zoomavel">
+                <figcaption>Calça Papai Noel</figcaption>
+            </div>
 
-        <section class="clima">
-            <h2>
-                Clima
-                <img src="imagens/icone-clima.svg" alt="Ícone de clima" class="icone-svg">
-            </h2>
-            <p>Temperatura: <span id="temperatura">10</span> °C</p>
-            <p>Vento: <span id="vento">12</span> km/h</p>
-            <p>Sensação Termica: <span id="sensacao">10</span> °C</p>
-        </section>
+            <div class="card-produto">
+                <img src="imagens/nutcrackers.webp" alt="Bonecos Quebra-Nozes natalinos" class="img-zoomavel">
+                <figcaption>Nutcrackers (Quebra-Nozes)</figcaption>
+            </div>
 
-        <section class="dados">
-            <h2>Dados do Local</h2>
-            <dl>
-                <dt>Inauguração:</dt>
-                <dd>1947</dd>
-                <dt>Capacidade:</dt>
-                <dd>81.044 lugares</dd>
-                <dt>Time:</dt>
-                <dd>Real Madrid</dd>
-            </dl>
+            <div class="card-produto">
+                <img src="imagens/treno.webp" alt="Enfeite de Treno natalino" class="img-zoomavel">
+                <figcaption>Treno de Natal</figcaption>
+            </div>
+
+            <div class="card-produto">
+                <img src="imagens/vilinha.webp" alt="Miniatura de vilinha natalina" class="img-zoomavel">
+                <figcaption>Vilinha Natalina 1</figcaption>
+            </div>
+
+            <div class="card-produto">
+                <img src="imagens/vilinha2.webp" alt="Miniatura de vilinha natalina alternativa" class="img-zoomavel">
+                <figcaption>Vilinha Natalina 2</figcaption>
+            </div>
         </section>
     </main>
+    
     <footer>
-        <p>&copy;<span id="anoatual"></span> 💀Richard Rocha💀 Paraná, Brasil</p>
-        <p>Última Modificação: <span id="ultimaModificacao"></span></p>
+        <div class="footer-conteudo">
+            <!-- Botão do Instagram -->
+            <a href="https://www.instagram.com/soldadinho_de_chumbonatal/" target="_blank" class="botao-instagram">
+                ✨ Siga nosso Instagram
+            </a>
+            
+            <!-- Ícone do WhatsApp -->
+            <a href="https://wa.me/5541995096336?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações." target="_blank" class="icone-whatsapp" title="Fale conosco no WhatsApp">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                </svg>
+                <span>WhatsApp</span>
+            </a>
+
+            <!-- Informações de Direitos Autorais e Data -->
+            <p>&copy;<span id="anoatual"></span> Richard Rocha. Todos os direitos reservados.</p>
+            <p>Última Modificação: <span id="ultimaModificacao"></span></p>
+        </div>
+
+        <!-- Player de Música Local Totalmente Oculto -->
+        <audio id="audioNatal" loop style="display: none;">
+            <source src="musica/natal.mp3" type="audio/mpeg">
+            O seu navegador não suporta o elemento de áudio.
+        </audio>
     </footer>
 
+    <!-- Janela Pop-up (Modal) para exibir a imagem em tamanho real -->
+    <div id="modalZoom" class="modal-zoom">
+        <span class="botao-fechar">&times;</span>
+        <img class="modal-conteudo" id="imgModal" alt="Imagem ampliada">
+    </div>
 </body>
 </html>

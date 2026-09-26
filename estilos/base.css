@@ -1,3 +1,266 @@
-head, main, footer {
-    background-color: red
+/* Configuração geral do fundo da página */
+body {
+    background-image: url('../imagens/planodefundo.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* ========================================== */
+/* EFEITO DE NEVE CAINDO                      */
+/* ========================================== */
+.floco-neve {
+    position: fixed;
+    top: -10px;
+    background: #ffffff;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 0 0 8px #ffffff, 0 0 12px #ffd700;
+    animation: cair linear infinite, balancar ease-in-out infinite;
+    z-index: 9999;
+}
+
+@keyframes cair {
+    0% { transform: translateY(-10px); }
+    100% { transform: translateY(105vh); }
+}
+
+@keyframes balancar {
+    0%, 100% { margin-left: 0; }
+    50% { margin-left: 20px; }
+}
+
+/* Estilização do Rodapé */
+footer {
+    background-color: rgba(0, 0, 0, 0.75);
+    text-align: center;
+    padding: 1.2rem 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Container flexível para alinhar tudo em linha */
+.footer-conteudo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que quebre em telas muito pequenas (ex: celulares estreitos) */
+    gap: 20px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+/* Botão do Instagram */
+.botao-instagram {
+    display: inline-block;
+    background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.botao-instagram:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* Ícone do WhatsApp */
+.icone-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #25d366;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.icone-whatsapp svg {
+    stroke: #fff;
+    fill: #25d366;
+}
+
+.icone-whatsapp:hover {
+    transform: scale(1.05);
+    background-color: #1ebe5d;
+}
+
+/* ========================================== */
+/* ESTILIZAÇÃO DO HEADER E H1 (Dourado Brilhante) */
+/* ========================================== */
+header {
+    background-color: transparent;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin: 0;
+    display: inline-block;
+    
+    background: linear-gradient(135deg, #ffea85 0%, #ffd700 35%, #ffb700 70%, #d4af37 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.9));
+    animation: flutuar 3s ease-in-out infinite;
+}
+
+/* ========================================== */
+/* CONTAINER PRINCIPAL E H2 DA GALERIA        */
+/* ========================================== */
+.galeria-natalina {
+    max-width: 1300px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.galeria-natalina h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    text-align: center;
+    
+    background: linear-gradient(135deg, #ffea85 0%, #ffd700 35%, #ffb700 70%, #d4af37 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.9));
+    animation: flutuar 4s ease-in-out infinite;
+}
+
+@keyframes flutuar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+/* ========================================== */
+/* CARDS SEM BORDAS BRANCAS                   */
+/* ========================================== */
+.card-produto {
+    background: transparent;
+    width: 320px;
+    margin: 0;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.galeria-natalina img {
+    width: 100%;
+    height: 380px;
+    object-fit: contain;
+    display: block;
+    cursor: pointer;
+    border-radius: 8px;
+    background-color: transparent;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.6));
+}
+
+.galeria-natalina figcaption {
+    margin-top: 8px;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+    font-weight: 600;
+    font-size: 0.85rem; 
+}
+
+.card-produto:hover {
+    transform: translateY(-6px);
+}
+
+.card-produto:hover img {
+    transform: scale(1.02);
+}
+
+/* ========================================== */
+/* POP-UP / MODAL DE ZOOM DA IMAGEM           */
+/* ========================================== */
+.modal-zoom {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.modal-conteudo {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 85vh;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.botao-fechar {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 45px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.botao-fechar:hover,
+.botao-fechar:focus {
+    color: #ffd700;
+    text-decoration: none;
+}
+
+@media screen and (min-width: 1200px) {
+    .galeria-natalina {
+        max-width: 1500px; 
+        gap: 40px;         
+    }
+
+    .card-produto {
+        width: 350px;      
+    }
+
+    .galeria-natalina img {
+        height: 420px;     
+    }
 }
